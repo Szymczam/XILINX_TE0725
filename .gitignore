@@ -1,0 +1,37 @@
+# Ignore everything
+# Object files
+# Linker output
+# *
+
+# But not these files...
+!.gitignore
+!.gitattributes
+.gitignore.bak
+
+
+!*.xpr
+!*.xsa
+
+*.log
+*.jou
+*.str
+
+
+*.Xil
+!/XILINX_TE0725
+/XILINX_TE0725.cache
+/XILINX_TE0725.gen
+/XILINX_TE0725.hw
+/XILINX_TE0725.ip_user_files
+/XILINX_TE0725.runs
+!/XILINX_TE0725.sim
+!/XILINX_TE0725.srcs
+
+
+
+/Software/*
+Software/.metadata
+!Software/CPU0/
+!Software/CPU0_system/
+!Software/CPU1/
+!Software/CPU1_system/
