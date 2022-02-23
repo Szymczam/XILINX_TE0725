@@ -1,0 +1,9 @@
+# This file is automatically written.  Do not modify.
+proc gen_USERPARAMETER_g_iavs0_addr_width_VALUE {g_is_hyperflash_present g_is_hyperRAM_present } {expr [expr {($g_is_hyperflash_present!= 0) ? ($g_is_hyperRAM_present ==0) ? 26 : 27 : ($g_is_hyperRAM_present == 8) ? 23 : 24 }]}
+proc gen_USERPARAMETER_g_dev0_config_VALUE {g_is_hyperflash_present g_hyperbus_freq_in_mhz } {expr [expr {($g_is_hyperflash_present== 0) ? 0x00000000 : ($g_hyperbus_freq_in_mhz==100) ? 0x8f5f1060: ($g_hyperbus_freq_in_mhz==125) ? 0x8f7f1060 : 0x8fbf0060}]}
+proc gen_USERPARAMETER_g_dev1_config_VALUE {g_is_hyperRAM_present g_hyperbus_freq_in_mhz } {expr [expr {($g_is_hyperRAM_present== 0) ? 0x00000000 : ($g_hyperbus_freq_in_mhz==100) ? ($g_is_hyperRAM_present==16) ? 0x8fff3041 : 0x8fff1031: ($g_hyperbus_freq_in_mhz==125) ?  ($g_is_hyperRAM_present==16) ? 0x8f0f3041 : 0x8f0f1031 : 0x8f1f0031}]}
+proc gen_USERPARAMETER_g_dev0_timing_VALUE {g_is_hyperflash_present g_hyperbus_freq_in_mhz } {expr [expr {($g_is_hyperflash_present== 0) ? 0x00000000 : ($g_hyperbus_freq_in_mhz==100) ? 0x000a0011: ($g_hyperbus_freq_in_mhz==125) ? 0x000c0011 : 0x00100011}]}
+proc gen_USERPARAMETER_g_dev1_timing_VALUE {g_is_hyperRAM_present g_hyperbus_freq_in_mhz } {expr [expr {($g_is_hyperRAM_present== 0) ? 0x00000000 : ($g_hyperbus_freq_in_mhz==100) ? 0x00045111: ($g_hyperbus_freq_in_mhz==125) ?  0x00056211 : 0x00067221}]}
+proc gen_USERPARAMETER_HYPERRAM_BASEADDR_VALUE {g_is_hyperflash_present } {expr [expr $g_is_hyperflash_present>0 ? ($g_is_hyperflash_present *1024*1024) : 0]}
+proc gen_USERPARAMETER_HYPERRAM_HIGHADDR_VALUE {g_is_hyperflash_present g_is_hyperRAM_present } {expr [expr (($g_is_hyperflash_present+$g_is_hyperRAM_present) *1024*1024) -1 ]}
+proc gen_USERPARAMETER_HYPERFLASH_HIGHADDR_VALUE {g_is_hyperflash_present } {expr [expr $g_is_hyperflash_present>0 ? ($g_is_hyperflash_present *1024*1024) -1 : 0]}
