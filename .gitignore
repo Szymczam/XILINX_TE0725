@@ -23,10 +23,15 @@
 /XILINX_TE0725.gen
 /XILINX_TE0725.hw
 /XILINX_TE0725.ip_user_files
-/XILINX_TE0725.runs
+#/XILINX_TE0725.runs
 !/XILINX_TE0725.sim
 !/XILINX_TE0725.srcs
 
+
+/!XILINX_TE0725.runs/*
+XILINX_TE0725.runs/impl_1/
+XILINX_TE0725.runs/synth_1/
+XILINX_TE0725.runs/.jobs/
 
 
 /Software/*
